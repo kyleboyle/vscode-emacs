@@ -30,7 +30,7 @@ export default class StatusIndicator {
     this.activeModes = [];
     this.statusBarItem.text = this.statusText();
     this.statusBarItem.tooltip = this.toolTipText();
-    this.statusBarItem.show();
+    //this.statusBarItem.show();
   }
   public deactivateTempModes = () => {
     this.activeModes = this.activeModes.filter(i => i === Mode.Cua);
@@ -85,6 +85,7 @@ export default class StatusIndicator {
     return value ? value : Mode.NoKeyBinding;
   }
   public setStatusBarMessage = (text: string, duration: number = 1000) => {
+    /*
     this.statusBarItem.text = this.tempMessage(text);
 
     // put the mode indicators back in
@@ -92,19 +93,21 @@ export default class StatusIndicator {
       () => {
         this.statusBarItem.text = this.statusText();
       },
-      duration);
+      duration);*/
   }
   public setStatusBarPermanentMessage = (text: string) => {
+    /*
     if (text === "") {
       this.statusBarItem.text = this.statusText();
     } else {
       this.statusBarItem.text = `EMACS: ${text}`;
-    }
+    }*/
   }
   private refreshStatusBar = () => {
+    /*
     this.statusBarIcons = this.activeModes.map(i => IconMapper[i]);
     this.statusBarItem.text = this.statusText();
-    this.statusBarItem.tooltip = this.toolTipText();
+    this.statusBarItem.tooltip = this.toolTipText();*/
   }
   private tempMessage = (msg: string) => `EMACS: ${msg}`;
   private statusText = () => `EMACS: ${this.statusBarIcons.map(i => `$(${i})`).join(" ")}`;
