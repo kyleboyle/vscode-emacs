@@ -244,7 +244,6 @@ export class Editor {
       && clipboardy.write(text);
   }
 
-
   public killRegion(): void {
     const selection = this.getSelection();
     const range = new vscode.Range(selection.start, selection.end);
@@ -298,7 +297,7 @@ export class Editor {
       this.killRing.backward();
       const prevText = this.killRing.top();
       editBuilder.replace(this.killRing.getLastRange(), prevText);
-      this.saveClipboard(prevText);
+      this.saveClipboard(this.killRing.top());
     }).then(() => {
       const textRange = new vscode.Range(oldInsertionPoint, vscode.window.activeTextEditor.selection.end);
       this.killRing.setLastInsertedRange(textRange);

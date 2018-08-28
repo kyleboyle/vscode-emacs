@@ -504,15 +504,15 @@
             }
         ],
         "configuration": {
-          "title": "Emacs Keymap Improved",
-          "properties": {
-              "emacs.setClipboardContents": {
-                  "type": "boolean",
-                  "default": false,
-                  "description": "kill and yank pop will set the contents of system clipboard to the top of the kill ring"
-              }
-          }
-      }
+            "title": "Emacs Keymap Improved",
+            "properties": {
+                "emacs.setClipboardContents": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "kill and yank pop will set the contents of system clipboard to the top of the kill ring"
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
